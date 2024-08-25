@@ -68,7 +68,7 @@
                 @submit.prevent="characters = 0; $wire.submitMessage()"
                 class="p-4"
             >
-                <input type="text" wire:model="message" placeholder="Ask questions about Laravel" maxlength="256" class="pb-3 w-full bg-transparent border-b placeholder-black/20 dark:placeholder-white/30 border-black/10 dark:border-white/20 focus:outline-none" @keyup.stop="characters = $event.target.value.length" @keyup.esc="open = false" />
+                <input type="text" wire:model="message" placeholder="Ask questions about Laravel" maxlength="256" class="pb-3 w-full text-base bg-transparent border-b placeholder-black/20 dark:placeholder-white/30 border-black/10 dark:border-white/20 focus:outline-none" @keyup.stop="characters = $event.target.value.length" @keyup.esc="open = false" />
 
                 @error('message')
                     <div class="mt-3 text-red-600 dark:text-red-500">{{ $message }}</div>
