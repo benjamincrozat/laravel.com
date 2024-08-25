@@ -1,27 +1,19 @@
 <header
     x-trap.inert.noscroll="navIsOpen"
-    class="main-header relative z-50 text-gray-700"
+    class="relative z-50 text-gray-700 main-header"
     @keydown.window.escape="navIsOpen = false"
     @click.away="navIsOpen = false"
 >
-    <x-header-news-bar />
-
-    <div class="relative max-w-screen-2xl mx-auto w-full py-4 bg-white transition duration-200 lg:bg-transparent lg:py-6">
-        <div class="max-w-screen-xl mx-auto px-5 flex items-center justify-between">
-            <div class="flex-1">
-                <a href="/" class="inline-flex items-center">
-                    <img class="w-12" src="/img/logomark.min.svg" alt="Laravel" width="50" height="52">
-                    <img class="ml-5 sm:block" src="/img/logotype.min.svg" alt="Laravel" width="114" height="29">
-                </a>
-            </div>
-            <ul class="relative hidden lg:flex lg:items-center lg:justify-center lg:gap-6 xl:gap-10">
+    <div class="relative py-4 mx-auto w-full max-w-screen-2xl bg-white transition duration-200 lg:bg-transparent lg:py-6">
+        <div class="flex justify-between items-center px-5 mx-auto max-w-screen-xl">
+            <ul class="hidden relative lg:flex lg:items-center lg:justify-center lg:gap-6 xl:gap-10">
                 <li><a href="https://forge.laravel.com">Forge</a></li>
                 <li><a href="https://vapor.laravel.com">Vapor</a></li>
                 <li x-data="{ expanded: false }" class="relative" @keydown.window.escape="expanded = false">
-                    <button class="flex items-center justify-center" @click="expanded = !expanded">
+                    <button class="flex justify-center items-center" @click="expanded = !expanded">
                         Ecosystem
                         <span class="ml-3 shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" :class="{ 'rotate-180': expanded }" class="h-4 w-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" :class="{ 'rotate-180': expanded }" class="w-4 h-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
                         </span>
                     </button>
                     <div
@@ -36,12 +28,12 @@
                         x-transition:leave-end="opacity-0 -translate-y-8"
                     >
                         <div
-                            class="mt-4 w-224 p-8 bg-white shadow-lg transform transition-transform origin-top"
+                            class="p-8 mt-4 bg-white shadow-lg transition-transform transform origin-top w-224"
                             @click.away="expanded = false"
                         >
-                            <ul class="grid gap-6 relative sm:grid-cols-2 md:grid-cols-3">
+                            <ul class="grid relative gap-6 sm:grid-cols-2 md:grid-cols-3">
 
-                                @foreach (App\Ecosystem::items() as $ecosystemItemId => $ecosystemItem)
+                                {{-- @foreach (App\Ecosystem::items() as $ecosystemItemId => $ecosystemItem)
                                     <li>
                                         <a href="{{ $ecosystemItem['href'] }}" class="flex">
                                             <div class="relative shrink-0 w-12 h-12 bg-{{ $ecosystemItemId }} flex items-center justify-center rounded-lg overflow-hidden">
@@ -50,11 +42,11 @@
                                             </div>
                                             <div class="ml-4 leading-5">
                                                 <div class="text-gray-900">{{ $ecosystemItem['name'] }}</div>
-                                                <span class="text-gray-700 text-xs">{{ $ecosystemItem['description'] }}</span>
+                                                <span class="text-xs text-gray-700">{{ $ecosystemItem['description'] }}</span>
                                             </div>
                                         </a>
                                     </li>
-                                @endforeach
+                                @endforeach --}}
                             </ul>
                         </div>
                     </div>
@@ -64,11 +56,11 @@
                 <li><a href="{{ route('careers') }}">Careers</a></li>
                 {{-- <li><a href="https://laravel.bigcartel.com/">Shop</a></li> --}}
             </ul>
-            <div class="flex-1 flex items-center justify-end">
+            <div class="flex flex-1 justify-end items-center">
                 <button id="docsearch"></button>
                 <x-button.secondary href="/docs/{{ DEFAULT_VERSION }}" class="hidden lg:ml-4 lg:inline-flex">Documentation</x-button.secondary>
                 <button
-                    class="ml-2 relative w-10 h-10 inline-flex items-center justify-center p-2 text-gray-700 lg:hidden"
+                    class="inline-flex relative justify-center items-center p-2 ml-2 w-10 h-10 text-gray-700 lg:hidden"
                     aria-label="Toggle Menu"
                     @click.prevent="navIsOpen = !navIsOpen"
                 >
@@ -91,14 +83,14 @@
             x-cloak
             class="fixed inset-0 w-full pt-[4.2rem] z-10 pointer-events-none"
         >
-            <div class="relative h-full w-full py-8 px-5 bg-white pointer-events-auto overflow-y-auto">
+            <div class="overflow-y-auto relative px-5 py-8 w-full h-full bg-white pointer-events-auto">
                 <ul>
-                    <li><a class="block w-full py-2" href="https://forge.laravel.com">Forge</a></li>
-                    <li><a class="block w-full py-2" href="https://vapor.laravel.com">Vapor</a></li>
-                    <li><a class="block w-full py-3" href="https://laravel-news.com">News</a></li>
-                    <li><a class="block w-full py-3" href="https://partners.laravel.com">Partners</a></li>
-                    <li><a class="block w-full py-3" href="{{ route('careers') }}">Careers</a></li>
-                    {{-- <li><a class="block w-full py-3" href="https://laravel.bigcartel.com/products">Shop</a></li> --}}
+                    <li><a class="block py-2 w-full" href="https://forge.laravel.com">Forge</a></li>
+                    <li><a class="block py-2 w-full" href="https://vapor.laravel.com">Vapor</a></li>
+                    <li><a class="block py-3 w-full" href="https://laravel-news.com">News</a></li>
+                    <li><a class="block py-3 w-full" href="https://partners.laravel.com">Partners</a></li>
+                    <li><a class="block py-3 w-full" href="{{ route('careers') }}">Careers</a></li>
+                    {{-- <li><a class="block py-3 w-full" href="https://laravel.bigcartel.com/products">Shop</a></li> --}}
                     <li class="flex sm:justify-center"><x-button.secondary class="mt-3 w-full max-w-md" href="/docs/{{ DEFAULT_VERSION }}">Documentation</x-button.secondary></li>
                 </ul>
             </div>

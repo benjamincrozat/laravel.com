@@ -10,6 +10,8 @@
     <title>{{ isset($title) ? $title . ' - ' : null }}Laravel {{ isset($currentVersion) ? $currentVersion . ' ' : null }}- The PHP Framework For Web Artisans</title>
     @endif
 
+    @livewireStyles
+
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
     @if (isset($canonical))
@@ -86,29 +88,20 @@
     }"
     class="w-full h-full font-sans antialiased text-gray-900 language-php"
     data-instant-intensity="0"
+    @keyup.c.window="$dispatch('conversation')"
 >
 
 @yield('content')
 
 @include('partials.footer')
 
+@livewireScripts
+
 <script>
     var algolia_app_id = '{{ config('algolia.connections.main.id', false) }}';
     var algolia_search_key = '{{ config('algolia.connections.main.search_key', false) }}';
     var version = '{{ isset($currentVersion) ? $currentVersion : DEFAULT_VERSION }}';
 </script>
-
-<script>
-    var _gaq=[['_setAccount','UA-23865777-1'],['_trackPageview']];
-    (function(d,t){
-        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)
-    }(document,'script'));
-</script>
-
-<!-- HubSpot -->
-<script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/45240648.js"></script>
 
 <div class="fixed">
     <input type="text">

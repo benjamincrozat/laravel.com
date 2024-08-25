@@ -1,16 +1,9 @@
-import Alpine from 'alpinejs';
-import Focus from '@alpinejs/focus';
-import docsearch from '@docsearch/js';
+import docsearch from '@docsearch/js'
 import 'instant.page'
 
 import.meta.glob([
   '../images/**',
-]);
-
-window.Alpine = Alpine;
-
-Alpine.plugin(Focus);
-Alpine.start();
+])
 
 docsearch({
     container: '#docsearch',
@@ -20,4 +13,4 @@ docsearch({
     searchParameters: {
         facetFilters: ['version:' + window.version],
     },
-});
+})

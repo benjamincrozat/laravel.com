@@ -130,5 +130,7 @@ export default {
         pattern: new RegExp(`bg-(${Object.keys(accentColors).join('|')})`),
     }
   ],
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
