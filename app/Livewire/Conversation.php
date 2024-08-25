@@ -8,9 +8,14 @@ use Livewire\Attributes\On;
 use Livewire\Attributes\Locked;
 use Livewire\Attributes\Validate;
 use OpenAI\Laravel\Facades\OpenAI;
+use Illuminate\Validation\ValidationException;
+use DanHarrin\LivewireRateLimiting\WithRateLimiting;
+use DanHarrin\LivewireRateLimiting\Exceptions\TooManyRequestsException;
 
 class Conversation extends Component
 {
+    use WithRateLimiting;
+
     #[Locked]
     public string $content;
 
@@ -83,6 +88,15 @@ class Conversation extends Component
         }
 
         $this->validate();
+
+        try {
+            // Limit to 30 requests per hour.
+            $this->rateLimit(30, 3600);
+        } catch (TooManyRequestsException $e) {
+            throw ValidationException::withMessages(['message' => 'Only 30 requests per hour are allowed, sorry!']);
+
+            return;
+        }
 
         $this->messages[] = [
             'role' => 'user',
