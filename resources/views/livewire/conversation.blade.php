@@ -1,7 +1,7 @@
 <div class="grid fixed inset-4 place-items-end text-sm sm:top-auto" x-data="{ open: false }">
     <div>
         <div
-            class="w-full sm:w-[480px] mb-4 bg-white/[.85] backdrop-blur-md rounded-lg border shadow-lg shadow-black/20"
+            class="w-full sm:w-[480px] mb-4 bg-white/[.85] dark:bg-black/[.85] backdrop-blur-md rounded-lg ring-1 ring-black/5 dark:ring-white/5 shadow-lg shadow-black/20 dark:shadow-none dark:text-gray-300"
             x-data="{ characters: 0 }"
             x-show="open"
             x-transition.duration.300ms
@@ -30,7 +30,7 @@
                             <div
                                 @class([
                                     'p-4 marker:text-white marker:font-medium rounded prose prose-sm max-w-none prose-pre:break-all prose-pre:whitespace-pre-wrap prose-pre:text-base',
-                                    'bg-black/5' => $message['role'] === 'user',
+                                    'bg-black/5 dark:bg-white/10 dark:text-gray-100' => $message['role'] === 'user',
                                     'bg-[#eb4432]/[.85] prose-invert text-white' => $message['role'] === 'assistant',
                                 ])
                                 style="word-break: break-word"
@@ -43,7 +43,7 @@
                     @if ($replying)
                         <div
                             wire:stream="reply-{{ $this->getId() }}"
-                            class="p-4 rounded border scroll-mt-4"
+                            class="p-4 rounded border border-black/10 dark:border-white/20 scroll-mt-4"
                             x-init="$el.scrollIntoView({ behavior: 'smooth' })"
                         >
                             {{ $reply }}
@@ -51,7 +51,7 @@
                     @endif
                 </div>
             @else
-                <div class="p-8 pb-4 prose prose-sm">
+                <div class="p-8 pb-4 prose dark:prose-invert prose-sm">
                     <p>Heads up!</p>
                     <ol>
                         <li><strong>This is an experimental tool</strong></li>
@@ -67,14 +67,14 @@
                 @submit.prevent="characters = 0; $wire.submitMessage()"
                 class="p-4"
             >
-                <input type="text" wire:model="message" placeholder="Ask questions about Laravel" maxlength="256" class="pb-3 w-full bg-transparent border-b placeholder-black/20 border-black/10 focus:outline-none" @keyup.stop="characters = $event.target.value.length" @keyup.esc="open = false" />
+                <input type="text" wire:model="message" placeholder="Ask questions about Laravel" maxlength="256" class="pb-3 w-full bg-transparent border-b placeholder-black/20 dark:placeholder-white/30 border-black/10 dark:border-white/20 focus:outline-none" @keyup.stop="characters = $event.target.value.length" @keyup.esc="open = false" />
 
                 @error('message')
                     <div class="mt-1 text-red-600">{{ $message }}</div>
                 @enderror
             </form>
 
-            <div class="text-right text-sm text-black/[.5] pb-4 px-4">
+            <div class="text-right text-sm text-black/[.5] dark:text-white/50 pb-4 px-4">
                 <span x-text="characters"></span>/256
             </div>
         </div>
