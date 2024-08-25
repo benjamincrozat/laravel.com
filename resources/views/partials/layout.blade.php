@@ -24,17 +24,17 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://laravel.com/">
+    <meta property="og:url" content="https://laravel.benjamincrozat.com/">
     <meta property="og:title" content="Laravel - The PHP Framework For Web Artisans">
     <meta property="og:description" content="Laravel is a PHP web application framework with expressive, elegant syntax. We’ve already laid the foundation — freeing you to create without sweating the small things.">
-    <meta property="og:image" content="https://laravel.com/img/og-image.jpg">
+    <meta property="og:image" content="https://laravel.benjamincrozat.com/img/og-image.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://laravel.com/">
+    <meta property="twitter:url" content="https://laravel.benjamincrozat.com/">
     <meta property="twitter:title" content="Laravel - The PHP Framework For Web Artisans">
     <meta property="twitter:description" content="Laravel is a PHP web application framework with expressive, elegant syntax. We’ve already laid the foundation — freeing you to create without sweating the small things.">
-    <meta property="twitter:image" content="https://laravel.com/img/og-image.jpg">
+    <meta property="twitter:image" content="https://laravel.benjamincrozat.com/img/og-image.jpg">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
@@ -58,12 +58,12 @@
     ])
 
     @production
-        <!-- Fathom - beautiful, simple website analytics -->
-        <script src="https://cdn.usefathom.com/script.js" data-site="DVMEKBYF" defer></script>
-        <!-- / Fathom -->
-
-        <!-- Clearbit -->
-        <script async src="https://tag.clearbitscripts.com/v1/pk_97d2bf69f817feb07be42fcda1460119/tags.js" referrerpolicy="strict-origin-when-cross-origin"></script>
+        <script
+            defer
+            src="https://api.pirsch.io/pa.js"
+            id="pianjs"
+            data-code="mHblnJHv4an4xaKCLAQnkkM036nybTij"
+        ></script>
     @endproduction
 
     @php
