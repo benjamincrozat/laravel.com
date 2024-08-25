@@ -1,42 +1,28 @@
-## Laravel Website
+![](https://github.com/user-attachments/assets/15ccebbf-de3a-4812-88d0-9f93f722a675)
 
-This is the source of the official [Laravel website](https://laravel.com).
+# Laravel Documentation With a Chatbot
 
-## Local Development
+An intelligent chatbot system based on GPT-4o mini for Laravel documentation that prioritizes accuracy and prevents hallucinations seemlessly integrated into Laravel's documentation.
 
-If you want to work on this project on your local machine, you may follow the instructions below. These instructions assume you are serving the site using Laravel Valet out of your `~/Sites` directory:
+## Key Features
 
-1. Fork this repository 
-2. Open your terminal and `cd` to your `~/Sites` folder
-3. Clone your fork into the `~/Sites/laravel` folder, by running the following command *with your username placed into the {username} slot*:
-    ```bash
-    git clone git@github.com:{username}/laravel.com laravel
-    ```
-4. CD into the new directory you just created:
-    ```bash
-    cd laravel
-    ```
-5. Run the `setup.sh` bin script, which will take all the steps necessary to prepare your local install:
-    ```bash
-    ./bin/setup.sh
-    ```
-   
-### Torchlight Integration
+- **Hallucination Prevention**: Ensures responses are based on direct input of relevant information.
+- **Up-to-date Information**: Guarantees that the provided information is current.
+- **Speed**: Delivers fast responses to user queries.
+- **Seamless Integration**: Designed to work smoothly with your daily workflow.
 
-This project relies on Torchlight for syntax highlighting. You will need to create an account at [torchlight.dev](https://torchlight.dev/) and generate a free personal token for use in this project. Once generated, add your token to your .env file:
+## How It Works
 
-```ini
-TORCHLIGHT_TOKEN=your-torchlight-token
-```
+The system prevents the language model from responding without access to relevant, verified information. This approach significantly reduces the risk of inaccurate or hallucinated responses. To make it convenient, you can insist for answers.
 
-### Syncing Upstream Changes Into Your Fork 
+## Future Development
 
-This [GitHub article](https://help.github.com/en/articles/syncing-a-fork) provides instructions on how to pull the latest changes from this repository into your fork.
+- Expanding the system to answer any question without requiring navigation to specific documentation pages.
 
-### Updating After Remote Code Changes
+## Availability
 
-If you pull down the upstream changes from this repository into your local repository, you'll want to update your Composer and NPM dependencies, as well as update your documentation branches. For convenience, you may run the `bin/update.sh` script to update these things:
+This project is currently free and open for community use.
 
-```bash
-./bin/update.sh
-```
+## Demo
+
+https://laravel.benjamincrozat.com
