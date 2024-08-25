@@ -26,3 +26,8 @@ This project is currently free and open for community use.
 ## Demo
 
 https://laravel.benjamincrozat.com
+
+## Known Issues
+
+- There's no cache. Each page takes a bit of time to load.
+- Clicking on a search result sends you to laravel.com instead of laravel.benjamincrozat.com
