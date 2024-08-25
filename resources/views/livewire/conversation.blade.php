@@ -2,6 +2,7 @@
     <div>
         <div
             class="w-full sm:w-[480px] mb-4 bg-white/[.85] dark:bg-black/[.85] backdrop-blur-md rounded-lg ring-1 ring-black/5 dark:ring-white/5 shadow-lg shadow-black/20 dark:shadow-none dark:text-gray-300"
+            x-cloak
             x-data="{ characters: 0 }"
             x-show="open"
             x-transition.duration.300ms
