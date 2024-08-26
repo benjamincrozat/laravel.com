@@ -15,13 +15,11 @@ An intelligent chatbot system based on GPT-4o mini for Laravel documentation tha
 
 The system prevents the language model from responding without access to relevant, verified information. This approach significantly reduces the risk of inaccurate or hallucinated responses. To make it convenient, you can insist for answers.
 
+Everything happens in the Livewire component in `app/Livewire/Conversation.php`.
+
 ## Future Development
 
 - Expanding the system to answer any question without requiring navigation to specific documentation pages.
-
-## Availability
-
-This project is currently free and open for community use.
 
 ## Demo
 
@@ -29,5 +27,5 @@ https://laravel.benjamincrozat.com
 
 ## Known Issues
 
-- There's no cache. Each page takes a bit of time to load.
-- Clicking on a search result sends you to laravel.com instead of laravel.benjamincrozat.com
+- There's no pre-caching. Each page takes a bit of time to load.
+- Clicking on an Algolia search result sends you to laravel.com instead of laravel.benjamincrozat.com
