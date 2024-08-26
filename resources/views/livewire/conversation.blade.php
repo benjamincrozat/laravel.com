@@ -55,11 +55,9 @@
                 <div class="p-8 pb-4 prose dark:prose-invert prose-sm">
                     <p>Heads up!</p>
                     <ol>
-                        <li><strong>This is an experimental tool</strong></li>
-                        <li><strong>It's more accurate than ChatGPT</strong>.</li>
-                        <li><strong>It's not based on RAG</strong>, which makes it even more accurate</li>
-                        <li>More accuracy means tradeoffs, so <strong>it only knows about the current page</strong></li>
-                        <li><strong>It can still hallucinate</strong>, so always double check</li>
+                        <li><strong>This is an experimental tool</strong>.</li>
+                        <li>It's accurate. But that means tradeoffs have to be made. Therefore, <strong>it only focuses on the current page</strong>.</li>
+                        <li><strong>Language models are in their infancy.</strong> Test the code!</li>
                     </ol>
                 </div>
             @endif
