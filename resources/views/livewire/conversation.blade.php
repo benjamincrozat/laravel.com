@@ -56,9 +56,9 @@
                     <p>Heads up!</p>
                     <ol>
                         <li><strong>This is an experimental tool</strong></li>
-                        <li><strong>It's more accurate than ChatGPT</strong></li>
+                        <li><strong>It's more accurate than ChatGPT</strong>.</li>
                         <li><strong>It's not based on RAG</strong>, which makes it even more accurate</li>
-                        <li>Until we get a bigger context window on GPT, <strong>it only knows about the current page</strong></li>
+                        <li>More accuracy means tradeoffs, so <strong>it only knows about the current page</strong></li>
                         <li><strong>It can still hallucinate</strong>, so always double check</li>
                     </ol>
                 </div>
