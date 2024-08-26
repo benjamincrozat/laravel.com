@@ -144,7 +144,13 @@ class Conversation extends Component
 
     protected function docsIndex() : string
     {
-        return $this->removeUnnecessaryCharacters($this->docs->getIndex($this->currentVersion));
+        return preg_replace(
+            '/^<h2>.+<\/h2>/',
+            '',
+            $this->removeUnnecessaryCharacters(
+                $this->docs->getIndex($this->currentVersion)
+            )
+        );
     }
 
     protected function removeUnnecessaryCharacters(string $content) : string
