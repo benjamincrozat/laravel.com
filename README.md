@@ -23,7 +23,7 @@ Everything happens in the Livewire component in `app/Livewire/Conversation.php`.
 
 ## Demo
 
-https://laravel.benjamincrozat.com
+~~https://laravel.benjamincrozat.com~~ (the experiment is done)
 
 ## Known Issues
 
